@@ -48,7 +48,7 @@ public class ChukGiphyService {
             .queryParam("limit", limit)
             .queryParam("rating", rating)
             .toUriString();
-
+        System.out.println("ChukServiceUrl >> " + url);
         RequestEntity<Void> req = RequestEntity.get(url).build();
         RestTemplate template = new RestTemplate();
         ResponseEntity<String> resp = null; 

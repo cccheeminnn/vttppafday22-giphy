@@ -33,7 +33,7 @@ public class GiphyService {
             .queryParam("limit", limit)
             .queryParam("rating", rating)
             .toUriString();
-        
+        System.out.println("myService URL >> " + url);    
         RestTemplate template = new RestTemplate();
         ResponseEntity<String> resp = template.getForEntity(url, String.class);
         InputStream is = new ByteArrayInputStream(resp.getBody().getBytes());
