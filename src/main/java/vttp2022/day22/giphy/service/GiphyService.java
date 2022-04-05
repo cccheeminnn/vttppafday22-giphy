@@ -46,6 +46,7 @@ public class GiphyService {
             JsonObject o = v.asJsonObject();
             gifUrl.add(o.getJsonObject("images").getJsonObject("fixed_width").getString("url"));
         });
+        
         return gifUrl;
     }
 }
