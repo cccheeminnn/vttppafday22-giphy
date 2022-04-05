@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" 
+        integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer"/>
+    </head>
+    <body>
+        <form action="/search" method="GET">
+            <h1 style="margin-top: 15px; margin-left: 30px;">Search giphy!</h1>
+            <table style="margin-top: 15px; margin-left: 30px;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Search</span>
+                                <input name="searchval" type="text" class="form-control" placeholder="Type here" 
+                                    aria-label="Type here" aria-describedby="basic-addon1">
+                              </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="limit">No. of Gif</label>
+                                <select name="limit" class="form-select" id="limit">
+                                  <option value="5">5</option>
+                                  <option value="10" selected>10</option>
+                                  <option value="15">15</option>
+                                  <option value="20">20</option>
+                                </select>
+                              </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="limit">Rating</label>
+                                <select name="limit" class="form-select" id="limit">
+                                  <option value="g">g</option>
+                                  <option value="pg" selected>pg</option>
+                                  <option value="pg-13">pg-13</option>
+                                  <option value="r">r</option>
+                                </select>
+                              </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button class="btn btn-primary" type="submit">Search</button>
+                              </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
