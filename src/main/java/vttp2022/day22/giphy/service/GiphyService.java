@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -19,8 +20,11 @@ import jakarta.json.JsonReader;
 public class GiphyService {
 
     private final String GIPHY_URL = "https://api.giphy.com/v1/gifs/search";
-    private final String API_KEY = System.getenv("API_KEY");
-
+    
+    //set GIPHY_API_KEY=<key>
+    @Value("${giphy.api.key}")
+    private String API_KEY;
+    
     public List<String> retrieveGifLinks(String searchval, String limit, String rating) {
         String url = UriComponentsBuilder
             .fromUriString(GIPHY_URL)
