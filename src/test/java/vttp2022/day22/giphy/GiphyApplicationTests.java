@@ -17,6 +17,7 @@ import vttp2022.day22.giphy.service.GiphyService;
 class GiphyApplicationTests {
 
 	//set GIPHY_API_KEY=<key>
+	//github secrets
 	@Value("${giphy.api.key}")
 	private String giphyKey;
 

@@ -22,6 +22,7 @@ import jakarta.json.JsonValue;
 public class ChukGiphyService {
     
     //set GIPHY_API_KEY=<key>
+    //github secrets
     @Value("${giphy.api.key}")
     private String giphyKey;
 
