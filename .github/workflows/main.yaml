@@ -29,4 +29,25 @@ jobs:
     - name: Generate Jacoco badge
       uses: cicirello/jacoco-badge-generator@v2
       with:
-        jacoco-csv-file: target/site/jacoco/jacoco.csv
+        generate-coverage-badge: true
+
+    - name: Upload coverage badge to DO spaces
+      uses: BetaHuhn/do-spaces-action@v2
+      with:
+          access_key: ${{secrets.DO_ACCESS_KEY}}
+          secret_key: ${{secrets.DO_SECRET_KEY}}
+          space_name: bigcontainer
+          space_region: sgp1
+          source: .github/badges/jacoco.svg
+          out_dir: coverage/${{github.event.repository.name}}
+          permission: public-read
+      
+    - name: Upload whole jacoco coverage report
+      uses: BetaHuhn/do-spaces-action@v2
+      with:
+          access_key: ${{secrets.DO_ACCESS_KEY}}
+          secret_key: ${{secrets.DO_SECRET_KEY}}
+          space_name: bigcontainer
+          space_region: sgp1
+          source: target/site/jacoco
+          out_dir: coverage/${{github.event.repository.name}}
